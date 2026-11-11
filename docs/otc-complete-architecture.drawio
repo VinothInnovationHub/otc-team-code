@@ -1,0 +1,123 @@
+<mxfile host="app.diagrams.net" agent="Claude" version="24.0.0" type="device">
+  <diagram id="otc-architecture" name="Complete Architecture">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="920" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="title1" value="The Complete, Live Architecture &#8212; Teams to AI to Secure Storage" style="text;html=1;fontSize=22;fontStyle=1;align=left;verticalAlign=middle;fontColor=#1A1A1A;" vertex="1" parent="1">
+          <mxGeometry x="40" y="30" width="900" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="title2" value="Every component in the proven deployment, shown end to end" style="text;html=1;fontSize=13;align=left;verticalAlign=middle;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="40" y="64" width="700" height="24" as="geometry" />
+        </mxCell>
+
+        <mxCell id="teams1" value="&lt;b&gt;Microsoft Teams&lt;/b&gt;&lt;br&gt;Tab + Bot chat" style="rounded=1;whiteSpace=wrap;html=1;arcSize=10;shadow=1;fontSize=14;align=center;verticalAlign=middle;fillColor=#EDEDF7;strokeColor=#6264A7;strokeWidth=2;fontColor=#1A1A1A;gradientColor=#FFFFFF;gradientDirection=north;" vertex="1" parent="1">
+          <mxGeometry x="40" y="180" width="220" height="90" as="geometry" />
+        </mxCell>
+
+        <mxCell id="bot2" value="&lt;b&gt;Bot Service&lt;/b&gt;&lt;br&gt;message routing" style="rounded=1;whiteSpace=wrap;html=1;arcSize=10;shadow=1;fontSize=14;align=center;verticalAlign=middle;fillColor=#E6F2FB;strokeColor=#0078D4;strokeWidth=2;fontColor=#1A1A1A;gradientColor=#FFFFFF;gradientDirection=north;" vertex="1" parent="1">
+          <mxGeometry x="360" y="185" width="200" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="appsvc3" value="&lt;b&gt;App Service&lt;/b&gt;&lt;br&gt;Frontend + Bot Code" style="rounded=1;whiteSpace=wrap;html=1;arcSize=10;shadow=1;fontSize=16;align=center;verticalAlign=middle;fillColor=#CCE4F7;strokeColor=#0078D4;strokeWidth=3;fontColor=#1A1A1A;gradientColor=#FFFFFF;gradientDirection=north;" vertex="1" parent="1">
+          <mxGeometry x="660" y="140" width="260" height="100" as="geometry" />
+        </mxCell>
+
+        <mxCell id="func4" value="&lt;b&gt;Function App&lt;/b&gt;&lt;br&gt;background processing" style="rounded=1;whiteSpace=wrap;html=1;arcSize=10;shadow=1;fontSize=14;align=center;verticalAlign=middle;fillColor=#E6F2FB;strokeColor=#0078D4;strokeWidth=2;fontColor=#1A1A1A;gradientColor=#FFFFFF;gradientDirection=north;" vertex="1" parent="1">
+          <mxGeometry x="670" y="300" width="240" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="apim5" value="&lt;b&gt;APIM Gateway&lt;/b&gt;&lt;br&gt;security checkpoint" style="rounded=1;whiteSpace=wrap;html=1;arcSize=10;shadow=1;fontSize=14;align=center;verticalAlign=middle;fillColor=#FDF0E6;strokeColor=#CA5010;strokeWidth=2;fontColor=#1A1A1A;gradientColor=#FFFFFF;gradientDirection=north;" vertex="1" parent="1">
+          <mxGeometry x="680" y="430" width="220" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="ai6" value="&lt;b&gt;AI Engine&lt;/b&gt;&lt;br&gt;Doc Intelligence + Azure OpenAI" style="rounded=1;whiteSpace=wrap;html=1;arcSize=10;shadow=1;fontSize=14;align=center;verticalAlign=middle;fillColor=#F3E8FD;strokeColor=#8661C5;strokeWidth=2;fontColor=#1A1A1A;gradientColor=#FFFFFF;gradientDirection=north;" vertex="1" parent="1">
+          <mxGeometry x="640" y="560" width="300" height="90" as="geometry" />
+        </mxCell>
+
+        <mxCell id="storage7" value="Storage Layer&#10;toggle: Blob or SharePoint" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;fontSize=14;fontStyle=1;align=left;verticalAlign=top;spacingLeft=14;spacingTop=10;fillColor=#E6F4EA;strokeColor=#107C41;strokeWidth=2;fontColor=#1A1A1A;" vertex="1" parent="1">
+          <mxGeometry x="40" y="400" width="460" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="blob7a" value="Blob" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fontSize=13;align=center;verticalAlign=middle;fillColor=#FFFFFF;strokeColor=#107C41;strokeWidth=1.5;fontColor=#1A1A1A;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="70" y="490" width="90" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="table7b" value="Table" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fontSize=13;align=center;verticalAlign=middle;fillColor=#FFFFFF;strokeColor=#107C41;strokeWidth=1.5;fontColor=#1A1A1A;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="175" y="490" width="90" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="queue7c" value="Queue" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fontSize=13;align=center;verticalAlign=middle;fillColor=#FFFFFF;strokeColor=#107C41;strokeWidth=1.5;fontColor=#1A1A1A;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="280" y="490" width="90" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="sp7d" value="SharePoint" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fontSize=13;align=center;verticalAlign=middle;fillColor=#FFFFFF;strokeColor=#038387;strokeWidth=1.5;fontColor=#1A1A1A;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="385" y="490" width="90" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e1" value="bot activity" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;fontSize=11;fontColor=#666666;strokeColor=#9DA3AE;strokeWidth=1.5;endArrow=block;endFill=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="teams1" target="bot2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" value="webhook" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;fontSize=11;fontColor=#666666;strokeColor=#9DA3AE;strokeWidth=1.5;endArrow=block;endFill=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="bot2" target="appsvc3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" value="tab HTTP: form / upload / status / search" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;fontSize=11;fontColor=#666666;strokeColor=#9DA3AE;strokeWidth=1.5;endArrow=block;endFill=1;exitX=0.3;exitY=0;entryX=0.3;entryY=0;" edge="1" parent="1" source="teams1" target="appsvc3">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="140" y="110" />
+              <mxPoint x="790" y="110" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e4" value="proactive notify (Bot Connector)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;fontSize=11;fontColor=#666666;strokeColor=#9DA3AE;strokeWidth=1.5;endArrow=block;endFill=1;exitX=0.7;exitY=1;entryX=0.7;entryY=1;" edge="1" parent="1" source="appsvc3" target="teams1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="842" y="290" />
+              <mxPoint x="180" y="290" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e5" value="tracking row + queue message" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;fontSize=11;fontColor=#666666;strokeColor=#9DA3AE;strokeWidth=1.5;endArrow=block;endFill=1;exitX=0.2;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="appsvc3" target="storage7">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="712" y="360" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e6" value="direct upload (SAS)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;fontSize=11;fontColor=#107C41;fontStyle=1;strokeColor=#107C41;strokeWidth=2.5;dashed=1;dashPattern=6 4;endArrow=block;endFill=1;exitX=0.3;exitY=1;entryX=0;entryY=0.5;" edge="1" parent="1" source="teams1" target="storage7">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="106" y="510" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e7" value="queue trigger" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;fontSize=11;fontColor=#666666;strokeColor=#9DA3AE;strokeWidth=1.5;endArrow=block;endFill=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="appsvc3" target="func4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" value="generate_otc call" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;fontSize=11;fontColor=#666666;strokeColor=#9DA3AE;strokeWidth=1.5;endArrow=block;endFill=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="func4" target="apim5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" value="forwarded, key-checked" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;fontSize=11;fontColor=#666666;strokeColor=#9DA3AE;strokeWidth=1.5;endArrow=block;endFill=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="apim5" target="ai6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="legend1" value="" style="endArrow=none;html=1;strokeColor=#107C41;strokeWidth=2.5;dashed=1;dashPattern=6 4;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="40" y="700" as="sourcePoint" />
+            <mxPoint x="80" y="700" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="legend1t" value="direct-to-storage &#8212; bytes never touch the server" style="text;html=1;fontSize=12;align=left;verticalAlign=middle;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="90" y="688" width="380" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="legend2" value="" style="endArrow=none;html=1;strokeColor=#9DA3AE;strokeWidth=1.5;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="520" y="700" as="sourcePoint" />
+            <mxPoint x="560" y="700" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="legend2t" value="orchestrated via App Service / Function App" style="text;html=1;fontSize=12;align=left;verticalAlign=middle;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="570" y="688" width="360" height="24" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
