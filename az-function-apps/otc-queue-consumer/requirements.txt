@@ -1,0 +1,6 @@
+azure-functions
+aiohttp
+requests
+azure-storage-blob==12.31.1
+azure-data-tables==12.7.0
+azure-identity==1.27.0
