@@ -320,6 +320,16 @@ PAGE_HTML = """<!doctype html>
   function show(id) { document.getElementById(id).classList.remove("hidden"); }
   function hide(id) { document.getElementById(id).classList.add("hidden"); }
 
+  // Every value interpolated into innerHTML below passes through this first -
+  // customerName etc. are free-text user input round-tripped from storage,
+  // so without escaping, a crafted name (e.g. "<img src=x onerror=...>")
+  // would execute as script for anyone who later views or searches for it.
+  function esc(s) {
+    return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+    });
+  }
+
   function showPanel(name) {
     ["welcomePanel", "formPanel", "trackingPanel", "searchPanel"].forEach(function (p) { hide(p); });
     var el = document.getElementById(name);
@@ -477,7 +487,7 @@ PAGE_HTML = """<!doctype html>
       ["Last Updated", record.updatedAt || "—"],
     ];
     document.getElementById("trackingReview").innerHTML = rows.map(function (r) {
-      return '<div class="review-row"><span class="k">' + r[0] + '</span><span class="v">' + r[1] + "</span></div>";
+      return '<div class="review-row"><span class="k">' + esc(r[0]) + '</span><span class="v">' + esc(r[1]) + "</span></div>";
     }).join("");
   }
 
@@ -640,9 +650,10 @@ PAGE_HTML = """<!doctype html>
         var results = data.results || [];
         document.getElementById("searchSub").textContent = results.length + " result(s) for \\"" + q + "\\"";
         document.getElementById("searchResults").innerHTML = results.map(function (r) {
-          return '<div class="search-result" data-id="' + (r.requestId || r.RowKey) + '">' +
-            '<div><div class="sr-name">' + (r.customerName || "—") + '</div><div class="sr-id">' + (r.requestId || r.RowKey) + '</div></div>' +
-            '<span class="status-badge ' + (r.status || "").replace(/ /g, "-") + '">' + (r.status || "—") + '</span></div>';
+          var id = r.requestId || r.RowKey;
+          return '<div class="search-result" data-id="' + esc(id) + '">' +
+            '<div><div class="sr-name">' + esc(r.customerName || "—") + '</div><div class="sr-id">' + esc(id) + '</div></div>' +
+            '<span class="status-badge ' + esc((r.status || "").replace(/ /g, "-")) + '">' + esc(r.status || "—") + '</span></div>';
         }).join("") || '<p style="font-size:13px;color:var(--ink-soft);">No matching requests.</p>';
         document.querySelectorAll(".search-result").forEach(function (el) {
           el.addEventListener("click", function () {
