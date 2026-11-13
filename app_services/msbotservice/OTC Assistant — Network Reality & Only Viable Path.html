@@ -1,0 +1,250 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1"><style>:root{color-scheme:light}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OTC Assistant — Network Reality &amp; Only Viable Path</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  :root{
+    --paper:#f5f5f5; --paper-2:#ececec; --ink:#2d3142; --muted:#4f5d75; --soft:#5a6580;
+    --rule:rgba(45,49,66,0.12); --rule-solid:#bfc0c0; --accent:#bf4520; --accent-tint:rgba(191,69,32,0.08);
+    --link:#2e5aa8;
+    --sans:'Geist',system-ui,sans-serif; --serif:'Instrument Serif','Noto Serif',serif; --mono:'Geist Mono',ui-monospace,monospace;
+  }
+  body{font-family:var(--sans);background:var(--paper);color:var(--ink);padding:3rem 1.5rem;}
+  .frame{max-width:1020px;margin:0 auto;}
+  .eyebrow{font-family:var(--mono);font-size:0.68rem;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);margin-bottom:0.6rem;}
+  h1{font-family:var(--serif);font-size:clamp(1.6rem,2.2vw+0.8rem,2.1rem);font-weight:400;letter-spacing:-0.01em;margin-bottom:0.6rem;}
+  .sub{font-family:var(--sans);font-size:0.92rem;color:var(--soft);max-width:800px;margin-bottom:2rem;line-height:1.55;}
+  .panel{background:#fff;border:1px solid var(--rule);border-radius:8px;padding:18px 20px 12px;margin-bottom:20px;}
+  .panel-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;flex-wrap:wrap;gap:8px;}
+  .panel-num{font-family:var(--mono);font-size:10px;color:var(--soft);letter-spacing:0.08em;}
+  .panel-title{font-family:var(--sans);font-weight:600;font-size:14px;color:var(--ink);margin-top:2px;}
+  .badge{font-family:var(--mono);font-size:9.5px;font-weight:500;letter-spacing:0.05em;text-transform:uppercase;padding:3px 9px;border-radius:3px;white-space:nowrap;}
+  .badge-fail{background:var(--accent-tint);color:var(--accent);border:1px solid rgba(191,69,32,0.35);}
+  .badge-ok{background:rgba(45,49,66,0.05);color:var(--ink);border:1px solid var(--rule-solid);}
+  .diagram-container{width:100%;overflow-x:auto;}
+  svg{width:100%;min-width:760px;display:block;}
+  .verdict{background:var(--ink);color:var(--paper);border-radius:8px;padding:22px 24px;margin:28px 0 20px;}
+  .verdict .tag{font-family:var(--mono);font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(245,245,245,0.6);margin-bottom:10px;}
+  .verdict p{font-family:var(--sans);font-size:14px;line-height:1.65;margin-bottom:10px;}
+  .verdict p:last-child{margin-bottom:0;}
+  .verdict b{font-weight:600;}
+  .verdict .warn{color:#f0a37a;font-weight:600;}
+  .panel.alt{border:1.5px solid var(--ink);}
+  .sectioneyebrow{font-family:var(--mono);font-size:0.66rem;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;color:var(--muted);margin:2rem 0 0.9rem;}
+  .rec-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:0.5rem;}
+  .rec-card{background:#fff;border:1px solid var(--rule);border-radius:8px;padding:18px 20px;display:flex;flex-direction:column;gap:10px;}
+  .rec-wide{grid-column:span 2;}
+  @media (max-width:760px){.rec-grid{grid-template-columns:1fr;}.rec-wide{grid-column:span 1;}}
+  .rec-num{font-family:var(--mono);font-size:10px;letter-spacing:0.1em;color:var(--accent);font-weight:600;}
+  .rec-title{font-family:var(--sans);font-size:14px;font-weight:600;color:var(--ink);}
+  .rec-body p{font-family:var(--sans);font-size:12.5px;line-height:1.55;color:var(--ink);}
+  .rec-body code{font-family:var(--mono);font-size:11px;background:var(--paper-2);padding:1px 5px;border-radius:3px;}
+  .rec-foot{display:flex;justify-content:space-between;gap:12px;padding-top:8px;border-top:1px solid var(--rule);font-family:var(--mono);font-size:9.5px;color:var(--soft);letter-spacing:0.02em;flex-wrap:wrap;}
+</style>
+</head>
+<body>
+<div class="frame">
+  <p class="eyebrow">Architecture · OTC Assistant Teams Bot</p>
+  <h1>Network reality: three deployments, one constant</h1>
+  <p class="sub">All three were tried on the current VNet/subnet. Each hit the same control — Azure's network layer, not application code — at a different point in the request path.</p>
+
+  <!-- SCENARIO 1 -->
+  <div class="panel">
+    <div class="panel-head">
+      <div><div class="panel-num">SCENARIO 1</div><div class="panel-title">Adaptive Card + paperclip → App Service</div></div>
+      <span class="badge badge-fail">Inbound OK · outbound blocked</span>
+    </div>
+    <div class="diagram-container">
+      <svg viewBox="0 0 760 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="s1-title s1-desc">
+        <title id="s1-title">Scenario 1: Adaptive Card and paperclip into App Service</title>
+        <desc id="s1-desc">Inbound chat messages reach the App Service through its private endpoint successfully, but the App Service's outbound call to SharePoint is blocked by its dedicated VNet and subnet egress rules.</desc>
+        <defs>
+          <marker id="arrow-s1" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#4f5d75"/></marker>
+          <marker id="arrow-accent-s1" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#bf4520"/></marker>
+        </defs>
+        <rect width="100%" height="100%" fill="#ffffff"/>
+
+        <path d="M150,90 H260" stroke="#4f5d75" stroke-width="1" fill="none" marker-end="url(#arrow-s1)"/>
+        <rect x="157" y="70" width="90" height="14" rx="2" fill="#ffffff"/>
+        <text x="202" y="80" fill="#4f5d75" font-size="8" font-family="'Geist Mono',monospace" font-weight="500" text-anchor="middle" letter-spacing="0.04em">INBOUND: ALLOWED</text>
+
+        <path d="M480,90 H590" stroke="#bf4520" stroke-width="1.2" stroke-dasharray="5,4" fill="none" marker-end="url(#arrow-accent-s1)"/>
+        <rect x="482" y="70" width="108" height="14" rx="2" fill="#ffffff"/>
+        <text x="536" y="80" fill="#bf4520" font-size="8" font-family="'Geist Mono',monospace" font-weight="500" text-anchor="middle" letter-spacing="0.03em">OUTBOUND: BLOCKED</text>
+
+        <rect x="20" y="62" width="130" height="56" rx="6" fill="#f5f5f5"/>
+        <rect x="20" y="62" width="130" height="56" rx="6" fill="rgba(79,93,117,0.10)" stroke="#5a6580" stroke-width="1"/>
+        <text x="85" y="86" fill="#2d3142" font-size="11.5" font-weight="600" font-family="'Geist',sans-serif" text-anchor="middle">Teams UI</text>
+        <text x="85" y="102" fill="#4f5d75" font-size="8.5" font-family="'Geist Mono',monospace" text-anchor="middle">card + paperclip</text>
+
+        <rect x="260" y="62" width="220" height="56" rx="6" fill="#f5f5f5"/>
+        <rect x="260" y="62" width="220" height="56" rx="6" fill="#ffffff" stroke="#2d3142" stroke-width="1"/>
+        <text x="370" y="84" fill="#2d3142" font-size="11.5" font-weight="600" font-family="'Geist',sans-serif" text-anchor="middle">App Service</text>
+        <text x="370" y="100" fill="#4f5d75" font-size="8.5" font-family="'Geist Mono',monospace" text-anchor="middle">inbound: private endpoint · outbound: dedicated VNet/subnet</text>
+
+        <rect x="590" y="62" width="150" height="56" rx="6" fill="#f5f5f5"/>
+        <rect x="590" y="62" width="150" height="56" rx="6" fill="rgba(45,49,66,0.03)" stroke="rgba(45,49,66,0.30)" stroke-width="1"/>
+        <text x="665" y="84" fill="#2d3142" font-size="11.5" font-weight="600" font-family="'Geist',sans-serif" text-anchor="middle">SharePoint /</text>
+        <text x="665" y="98" fill="#2d3142" font-size="11.5" font-weight="600" font-family="'Geist',sans-serif" text-anchor="middle">OneDrive</text>
+      </svg>
+    </div>
+  </div>
+
+  <!-- SCENARIO 2 -->
+  <div class="panel">
+    <div class="panel-head">
+      <div><div class="panel-num">SCENARIO 2</div><div class="panel-title">Teams WebView / Tab → App Service</div></div>
+      <span class="badge badge-fail">Inbound blocked — DNS</span>
+    </div>
+    <div class="diagram-container">
+      <svg viewBox="0 0 760 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="s2-title s2-desc">
+        <title id="s2-title">Scenario 2: Teams WebView tab blocked at DNS</title>
+        <desc id="s2-desc">A Teams user's browser cannot resolve the private DNS zone for the App Service tab unless connected to the corporate VPN, so the request never leaves the browser.</desc>
+        <defs>
+          <marker id="arrow-accent-s2" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#bf4520"/></marker>
+        </defs>
+        <rect width="100%" height="100%" fill="#ffffff"/>
+
+        <path d="M150,90 H260" stroke="#bf4520" stroke-width="1.2" stroke-dasharray="5,4" fill="none" marker-end="url(#arrow-accent-s2)"/>
+        <rect x="155" y="70" width="100" height="14" rx="2" fill="#ffffff"/>
+        <text x="205" y="80" fill="#bf4520" font-size="8" font-family="'Geist Mono',monospace" font-weight="500" text-anchor="middle" letter-spacing="0.03em">DNS FAILS HERE</text>
+
+        <rect x="20" y="62" width="130" height="56" rx="6" fill="#f5f5f5"/>
+        <rect x="20" y="62" width="130" height="56" rx="6" fill="rgba(79,93,117,0.10)" stroke="#5a6580" stroke-width="1"/>
+        <text x="85" y="86" fill="#2d3142" font-size="11.5" font-weight="600" font-family="'Geist',sans-serif" text-anchor="middle">Teams UI</text>
+        <text x="85" y="102" fill="#4f5d75" font-size="8.5" font-family="'Geist Mono',monospace" text-anchor="middle">webview / tab</text>
+
+        <rect x="260" y="62" width="300" height="56" rx="6" fill="#f5f5f5"/>
+        <rect x="260" y="62" width="300" height="56" rx="6" fill="rgba(191,69,32,0.05)" stroke="#bf4520" stroke-width="1" stroke-dasharray="4,4"/>
+        <text x="410" y="84" fill="#2d3142" font-size="11.5" font-weight="600" font-family="'Geist',sans-serif" text-anchor="middle">App Service</text>
+        <text x="410" y="100" fill="#bf4520" font-size="8.5" font-family="'Geist Mono',monospace" text-anchor="middle">private DNS zone resolves only on GVPN</text>
+      </svg>
+    </div>
+  </div>
+
+  <!-- SCENARIO 3 -->
+  <div class="panel">
+    <div class="panel-head">
+      <div><div class="panel-num">SCENARIO 3</div><div class="panel-title">Hosted Agent via REST API (Foundry)</div></div>
+      <span class="badge badge-fail">Upload works · download blocked</span>
+    </div>
+    <div class="diagram-container">
+      <svg viewBox="0 0 760 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="s3-title s3-desc">
+        <title id="s3-title">Scenario 3: Foundry hosted agent published via REST API</title>
+        <desc id="s3-desc">The hosted agent's public Activity Protocol endpoint lets uploaded messages in successfully, but its outbound call to deliver or fetch the file is blocked by the same VNet egress rule as the other scenarios.</desc>
+        <defs>
+          <marker id="arrow-s3" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#4f5d75"/></marker>
+          <marker id="arrow-accent-s3" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#bf4520"/></marker>
+        </defs>
+        <rect width="100%" height="100%" fill="#ffffff"/>
+
+        <path d="M150,90 H260" stroke="#4f5d75" stroke-width="1" fill="none" marker-end="url(#arrow-s3)"/>
+        <rect x="160" y="70" width="80" height="14" rx="2" fill="#ffffff"/>
+        <text x="200" y="80" fill="#4f5d75" font-size="8" font-family="'Geist Mono',monospace" font-weight="500" text-anchor="middle" letter-spacing="0.04em">UPLOAD: OK</text>
+
+        <path d="M480,90 H590" stroke="#bf4520" stroke-width="1.2" stroke-dasharray="5,4" fill="none" marker-end="url(#arrow-accent-s3)"/>
+        <rect x="483" y="70" width="104" height="14" rx="2" fill="#ffffff"/>
+        <text x="535" y="80" fill="#bf4520" font-size="8" font-family="'Geist Mono',monospace" font-weight="500" text-anchor="middle" letter-spacing="0.03em">DOWNLOAD: BLOCKED</text>
+
+        <rect x="20" y="62" width="130" height="56" rx="6" fill="#f5f5f5"/>
+        <rect x="20" y="62" width="130" height="56" rx="6" fill="rgba(79,93,117,0.10)" stroke="#5a6580" stroke-width="1"/>
+        <text x="85" y="86" fill="#2d3142" font-size="11.5" font-weight="600" font-family="'Geist',sans-serif" text-anchor="middle">Teams UI</text>
+        <text x="85" y="102" fill="#4f5d75" font-size="8.5" font-family="'Geist Mono',monospace" text-anchor="middle">card + paperclip</text>
+
+        <rect x="260" y="62" width="220" height="56" rx="6" fill="#f5f5f5"/>
+        <rect x="260" y="62" width="220" height="56" rx="6" fill="#ffffff" stroke="#2d3142" stroke-width="1"/>
+        <text x="370" y="84" fill="#2d3142" font-size="11.5" font-weight="600" font-family="'Geist',sans-serif" text-anchor="middle">Hosted Agent</text>
+        <text x="370" y="100" fill="#4f5d75" font-size="8.5" font-family="'Geist Mono',monospace" text-anchor="middle">published via REST API</text>
+
+        <rect x="590" y="62" width="150" height="56" rx="6" fill="#f5f5f5"/>
+        <rect x="590" y="62" width="150" height="56" rx="6" fill="rgba(45,49,66,0.03)" stroke="rgba(45,49,66,0.30)" stroke-width="1"/>
+        <text x="665" y="84" fill="#2d3142" font-size="11.5" font-weight="600" font-family="'Geist',sans-serif" text-anchor="middle">Storage /</text>
+        <text x="665" y="98" fill="#2d3142" font-size="11.5" font-weight="600" font-family="'Geist',sans-serif" text-anchor="middle">SharePoint</text>
+      </svg>
+    </div>
+  </div>
+
+  <!-- VERDICT -->
+  <div class="verdict">
+    <div class="tag">Statement</div>
+    <p>All three scenarios fail at the same layer: Azure's network controls (NSG, firewall, private DNS) on this VNet/subnet — not application code, not the choice of App Service vs. a hosted agent vs. any future compute. <b>Every Azure compute resource placed in this environment is controlled the same way, inbound and outbound, until its specific IP ranges/domains are explicitly allow-listed by network/security.</b> There is no deployment option that avoids this.</p>
+    <p>The only path that does not depend on a network change: upload and download move directly between the browser and <b>Blob Storage's own public endpoint</b>, authorized by a single-file SAS link that expires in <b>5–10 minutes</b>.</p>
+    <p class="warn">This still requires explicit Security approval — it is a public-internet-reachable endpoint, even though access is scoped to one file and time-limited.</p>
+  </div>
+
+  <!-- ALTERNATIVE DIAGRAM -->
+  <div class="panel alt">
+    <div class="panel-head">
+      <div><div class="panel-num">ONLY ALTERNATIVE</div><div class="panel-title">Direct Blob Storage upload / download — short-lived SAS</div></div>
+      <span class="badge badge-ok">Needs Security sign-off, not Network</span>
+    </div>
+    <div class="diagram-container">
+      <svg viewBox="0 0 760 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="s4-title s4-desc">
+        <title id="s4-title">Only alternative: direct Blob Storage access over a short-lived SAS link</title>
+        <desc id="s4-desc">The browser uploads and downloads files directly against Blob Storage's public endpoint using a SAS token scoped to one file and valid for five to ten minutes, bypassing both the inbound and outbound network gates entirely.</desc>
+        <defs>
+          <marker id="arrow-s4" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#4f5d75"/></marker>
+        </defs>
+        <rect width="100%" height="100%" fill="#ffffff"/>
+
+        <path d="M150,90 H590" stroke="#4f5d75" stroke-width="1.2" fill="none" marker-end="url(#arrow-s4)"/>
+        <rect x="300" y="70" width="190" height="14" rx="2" fill="#ffffff"/>
+        <text x="395" y="80" fill="#4f5d75" font-size="8" font-family="'Geist Mono',monospace" font-weight="500" text-anchor="middle" letter-spacing="0.03em">PUT/GET :443, SAS 5–10 MIN</text>
+
+        <rect x="20" y="62" width="130" height="56" rx="6" fill="#f5f5f5"/>
+        <rect x="20" y="62" width="130" height="56" rx="6" fill="rgba(79,93,117,0.10)" stroke="#5a6580" stroke-width="1"/>
+        <text x="85" y="86" fill="#2d3142" font-size="11.5" font-weight="600" font-family="'Geist',sans-serif" text-anchor="middle">Teams UI</text>
+        <text x="85" y="102" fill="#4f5d75" font-size="8.5" font-family="'Geist Mono',monospace" text-anchor="middle">any network</text>
+
+        <rect x="590" y="62" width="150" height="56" rx="6" fill="#f5f5f5"/>
+        <rect x="590" y="62" width="150" height="56" rx="6" fill="rgba(191,69,32,0.08)" stroke="#bf4520" stroke-width="1"/>
+        <text x="665" y="84" fill="#2d3142" font-size="11.5" font-weight="600" font-family="'Geist',sans-serif" text-anchor="middle">Blob Storage</text>
+        <text x="665" y="100" fill="#bf4520" font-size="8" font-family="'Geist Mono',monospace" text-anchor="middle">public endpoint</text>
+      </svg>
+    </div>
+  </div>
+
+  <p class="sectioneyebrow">Recommended — three concrete actions</p>
+  <div class="rec-grid">
+
+    <div class="rec-card rec-wide">
+      <div class="rec-num">01</div>
+      <div class="rec-title">Allow SharePoint 443 (outbound rule)</div>
+      <div class="rec-body">
+        <p><b>Action:</b> add one outbound NSG/firewall allow rule on the App Service's egress subnet — destination <code>*.sharepoint.com</code> / <code>graph.microsoft.com</code>, port 443 (the <code>SharePointOnline</code> service tag covers both).</p>
+        <p><b>Fixes:</b> Scenario 1's blocked attachment fetch and Scenario 3's blocked download — completes the current Adaptive Card + paperclip design end-to-end, since inbound already works today.</p>
+      </div>
+      <div class="rec-foot"><span>Owner: Network / Firewall team</span><span>Effort: one rule change</span></div>
+    </div>
+
+    <div class="rec-card">
+      <div class="rec-num">02</div>
+      <div class="rec-title">Blob Storage direct upload/download</div>
+      <div class="rec-body">
+        <p><b>Action:</b> bot issues a single-file SAS token, 5–10 min expiry; browser uploads/downloads straight against Blob Storage's public endpoint.</p>
+        <p><b>Fixes:</b> removes the SharePoint/OneDrive dependency entirely — works regardless of any NSG or firewall state, no network ticket required.</p>
+      </div>
+      <div class="rec-foot"><span>Owner: App team — code only</span><span>Needs: Security sign-off</span></div>
+    </div>
+
+    <div class="rec-card rec-wide">
+      <div class="rec-num">03</div>
+      <div class="rec-title">Resolve DNS for the WebView/Tab path</div>
+      <div class="rec-body">
+        <p><b>Action:</b> publish a public DNS record for the tab's hostname pointing at App Gateway's existing public frontend IP, instead of relying only on the private DNS zone tied to GVPN — paired with the same inbound NSG/WAF fix already flagged above, since resolving the name alone doesn't yet pass the gate behind it.</p>
+        <p><b>Fixes:</b> Scenario 2 end-to-end — but only needed if a WebView/Tab UI is kept; the Adaptive Card path (Scenario 1) already avoids this requirement completely.</p>
+      </div>
+      <div class="rec-foot"><span>Owner: Network / DNS team</span><span>Effort: DNS record + 1 rule change</span></div>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>
+
+</body></html>
