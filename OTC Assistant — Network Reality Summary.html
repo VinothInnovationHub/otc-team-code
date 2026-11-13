@@ -1,0 +1,89 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1"><style>:root{color-scheme:light}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OTC Assistant — Network Reality Summary</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  :root{
+    --paper:#f5f5f5; --paper-2:#ececec; --ink:#2d3142; --muted:#4f5d75; --soft:#5a6580;
+    --rule:rgba(45,49,66,0.12); --rule-solid:#bfc0c0; --accent:#bf4520; --accent-tint:rgba(191,69,32,0.08);
+    --sans:'Geist',system-ui,sans-serif; --serif:'Instrument Serif','Noto Serif',serif; --mono:'Geist Mono',ui-monospace,monospace;
+  }
+  body{font-family:var(--sans);background:var(--paper);color:var(--ink);padding:3rem 1.5rem;}
+  .frame{max-width:760px;margin:0 auto;}
+  .eyebrow{font-family:var(--mono);font-size:0.68rem;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);margin-bottom:0.6rem;}
+  h1{font-family:var(--serif);font-size:clamp(1.6rem,2.2vw+0.8rem,2rem);font-weight:400;letter-spacing:-0.01em;margin-bottom:0.4rem;}
+  .sub{font-family:var(--sans);font-size:0.92rem;color:var(--soft);margin-bottom:2rem;line-height:1.55;}
+  h2{font-family:var(--sans);font-size:14.5px;font-weight:600;color:var(--ink);margin:2rem 0 0.8rem;padding-bottom:8px;border-bottom:1px solid var(--rule-solid);}
+  .scenario{background:#fff;border:1px solid var(--rule);border-radius:8px;padding:16px 20px;margin-bottom:14px;}
+  .scenario-title{font-family:var(--sans);font-weight:600;font-size:13.5px;margin-bottom:10px;}
+  .row{display:flex;align-items:flex-start;gap:10px;padding:6px 0;font-family:var(--sans);font-size:13px;line-height:1.5;}
+  .row + .row{border-top:1px solid var(--rule);}
+  .tag{font-family:var(--mono);font-size:9.5px;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;padding:2px 8px;border-radius:3px;white-space:nowrap;flex-shrink:0;min-width:64px;text-align:center;}
+  .tag-ok{background:rgba(45,49,66,0.06);color:var(--ink);border:1px solid var(--rule-solid);}
+  .tag-fail{background:var(--accent-tint);color:var(--accent);border:1px solid rgba(191,69,32,0.35);}
+  .statement{background:var(--ink);color:var(--paper);border-radius:8px;padding:20px 22px;margin:1.6rem 0;}
+  .statement p{font-size:13.5px;line-height:1.65;margin-bottom:10px;}
+  .statement p:last-child{margin-bottom:0;}
+  .statement b{font-weight:600;}
+  .statement .warn{color:#f0a37a;font-weight:600;}
+  ol{list-style:none;counter-reset:rec;}
+  ol li{counter-increment:rec;background:#fff;border:1px solid var(--rule);border-radius:8px;padding:14px 18px 14px 50px;margin-bottom:12px;position:relative;font-size:13px;line-height:1.55;}
+  ol li::before{content:"0" counter(rec);position:absolute;left:16px;top:14px;font-family:var(--mono);font-size:11px;font-weight:600;color:var(--accent);}
+  ol li b{font-weight:600;}
+  ol li .meta{display:block;margin-top:8px;padding-top:8px;border-top:1px solid var(--rule);font-family:var(--mono);font-size:9.5px;color:var(--soft);}
+  code{font-family:var(--mono);font-size:11.5px;background:var(--paper-2);padding:1px 5px;border-radius:3px;}
+</style>
+</head>
+<body>
+<div class="frame">
+  <p class="eyebrow">Architecture Summary · OTC Assistant Teams Bot</p>
+  <h1>Network reality — three deployments, one constant</h1>
+  <p class="sub">All three were tried on the current VNet/subnet. Each hit Azure's network layer at a different point — not application code.</p>
+
+  <h2>What was tried</h2>
+
+  <div class="scenario">
+    <div class="scenario-title">1 · Adaptive Card + paperclip → App Service</div>
+    <div class="row"><span class="tag tag-ok">Inbound</span> Allowed — reaches App Service through its private endpoint.</div>
+    <div class="row"><span class="tag tag-fail">Outbound</span> Blocked — App Service's dedicated VNet/subnet egress doesn't permit the call out to SharePoint/OneDrive to fetch the attached file.</div>
+  </div>
+
+  <div class="scenario">
+    <div class="scenario-title">2 · Teams WebView / Tab → App Service</div>
+    <div class="row"><span class="tag tag-fail">Inbound</span> Blocked — the private DNS zone for the tab's URL only resolves over GVPN; standard laptops never get a DNS answer, so the request never leaves the browser.</div>
+  </div>
+
+  <div class="scenario">
+    <div class="scenario-title">3 · Hosted Agent via REST API (Foundry)</div>
+    <div class="row"><span class="tag tag-ok">Upload</span> Works — the agent's public Activity Protocol endpoint accepts the inbound message.</div>
+    <div class="row"><span class="tag tag-fail">Download</span> Blocked — same outbound VNet egress rule as Scenario 1 stops the file from coming back.</div>
+  </div>
+
+  <div class="statement">
+    <p>All three fail at the same layer: Azure's network controls (NSG, firewall, private DNS) on this VNet/subnet — not the application code, and not the choice of App Service vs. a hosted agent vs. any other compute. <b>Every Azure compute resource placed in this environment is controlled the same way, inbound and outbound, until its specific IP ranges/domains are explicitly allow-listed by network/security.</b> No deployment option avoids this.</p>
+    <p>The only path that doesn't depend on a network change: upload and download move directly between the browser and <b>Blob Storage's own public endpoint</b>, authorized by a single-file SAS link expiring in <b>5–10 minutes</b>.</p>
+    <p class="warn">That path still requires explicit Security approval — it's a public-internet-reachable endpoint, even though access is scoped to one file and time-limited.</p>
+  </div>
+
+  <h2>Recommended — three concrete actions</h2>
+  <ol>
+    <li><b>Allow SharePoint 443 (outbound rule).</b> Add one outbound NSG/firewall allow rule on the App Service's egress subnet — destination <code>*.sharepoint.com</code> / <code>graph.microsoft.com</code>, port 443 (the <code>SharePointOnline</code> service tag covers both). Fixes Scenario 1's blocked attachment fetch and Scenario 3's blocked download; completes the current Adaptive Card + paperclip design end-to-end, since inbound already works today.
+      <span class="meta">Owner: Network/Firewall team · Effort: one rule change</span>
+    </li>
+    <li><b>Blob Storage direct upload/download.</b> Bot issues a single-file SAS token, 5–10 min expiry; browser uploads/downloads straight against Blob Storage's public endpoint. Removes the SharePoint/OneDrive dependency entirely — works regardless of any NSG/firewall state, no network ticket required.
+      <span class="meta">Owner: App team (code only) · Needs: Security sign-off</span>
+    </li>
+    <li><b>Resolve DNS for the WebView/Tab path.</b> Publish a public DNS record for the tab's hostname pointing at App Gateway's existing public frontend IP, instead of relying only on the private DNS zone tied to GVPN — paired with the same inbound NSG/WAF fix, since resolving the name alone doesn't yet pass the gate behind it. Fixes Scenario 2 end-to-end, but only needed if a WebView/Tab UI is kept — the Adaptive Card path already avoids this requirement completely.
+      <span class="meta">Owner: Network/DNS team · Effort: DNS record + 1 rule change</span>
+    </li>
+  </ol>
+</div>
+</body>
+</html>
+
+</body></html>
